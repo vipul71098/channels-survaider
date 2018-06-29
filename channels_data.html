@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	 <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+           <script type="text/javascript" src="js/checklist-model.js"></script>
+           <script type="text/javascript" src="js/main.js"></script>
+           <script type="text/javascript" src="js/service.js"></script>
+           <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+           <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<title></title>
+</head>
+
+<body ng-controller="mainctrl">
+	
+	<h1 class="h">CHANNELS LINK</h1>
+ <div ng-repeat="channels in channels">
+  <h1 class="h">{{channels}}</h1>
+  <div ng-repeat="val in data1[channels] track by $index">
+      <label class="la"><input type="checkbox" class="inc" checklist-model="getRoles()" checklist-value="{{val}}" ng-checked="csv.indexOf(val) > 10" ng-change="check(channels,val,checked)">
+     <a href="{{val}}" target="_blank">{{val}}</a>
+     </label class="la"></div><br>
+</div>
+
+     <center><button class="btn btn-danger" style="margin-top: 40px; margin-right: 80px;" ng-click='downloadCSV("channels.csv" )'>DOWNLOAD CSV</button> </center><br>
+
+
+<!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+</body>
+</html>
